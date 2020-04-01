@@ -1,12 +1,16 @@
 <template>
-  <div>
-    <h2>home</h2>
+  <div class="home">
+   <header-nav-bar></header-nav-bar>
   </div>
 </template>
 
 <script>
+import HeaderNavBar from './child/HeaderNavBar.vue'
 export default {
-  name:'Home'
+  name:'Home',
+  components: {
+    HeaderNavBar
+  }
 
 }
 </script>
