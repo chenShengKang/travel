@@ -5,8 +5,12 @@
 </template>
 
 <script>
+import HomeSwiper from './child/HomeSwiper.vue'
 export default {
-  name:'Home'
+  name:'Home',
+  components: {
+    HomeSwiper
+  }
 
 }
 </script>
