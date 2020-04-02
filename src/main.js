@@ -14,7 +14,7 @@ fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 Vue.config.productionTip = false
 //asdas
-
+Vue.prototype.$bus = new Vue()
 new Vue({
   router,
   store,
