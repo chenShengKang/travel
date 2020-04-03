@@ -11,7 +11,7 @@
         </div>  
       </div>
       <div slot="header-right">
-        城市
+        {{city}}
         <span class="iconfont icon-down">&#xe64a;</span>
         </div>
     </main-header>
@@ -22,6 +22,12 @@
 import MainHeader from '@/components/common/header/HeaderItem.vue'
 export default {
   name: 'HeaderNavBar',
+  props: {
+    city:{
+      type:String,
+      default:''
+    }
+  },
   components: {
     MainHeader
   }

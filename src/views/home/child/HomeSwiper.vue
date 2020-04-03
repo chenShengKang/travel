@@ -3,7 +3,7 @@
     <swiper  :options="swiperOption" >
     <!-- :not-next-tick="notNextTick" ref="mySwiper" -->
     <!-- slides -->
-    <swiper-slide v-for="item of swiperList" :key="item.id">
+    <swiper-slide v-for="item of list" :key="item.id">
       <img class="swiper-item" :src="item.imgUrl" :alt="item.alt">
     </swiper-slide>
    
@@ -21,16 +21,24 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props:{
+    list:{
+      type:Array,
+      dafault(){
+        return []
+      }
+    }
+  },
   data(){
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true
       },
-      swiperList: [
-        {id:'001',imgUrl:'//img1.qunarzz.com/sight/p0/201402/24/0b725e8cd5bb14af0a634e7dc7057e15.jpg_600x330_a1af1f44.jpg',alt:'动物园'},
-        {id:'002',imgUrl:'//img1.qunarzz.com/sight/p0/1508/34/4734408329e141b40bc2f2f6d1b5c4da.water.jpg_600x330_7360ba88.jpg',alt:'江心屿'}
-      ]
+      // swiperList: [
+      //   {id:'001',imgUrl:'//img1.qunarzz.com/sight/p0/201402/24/0b725e8cd5bb14af0a634e7dc7057e15.jpg_600x330_a1af1f44.jpg',alt:'动物园'},
+      //   {id:'002',imgUrl:'//img1.qunarzz.com/sight/p0/1508/34/4734408329e141b40bc2f2f6d1b5c4da.water.jpg_600x330_7360ba88.jpg',alt:'江心屿'}
+      // ]
     }
   }
 
