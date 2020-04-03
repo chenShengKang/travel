@@ -5,7 +5,7 @@
         <span class="iconfont">&#xe624;</span>
       </div>
       <div slot="header-center">
-        <p  class="content"> 城市</p>
+        <p  class="content"> 城市选择</p>
       </div>
     </header-item>
   </div>
@@ -13,6 +13,8 @@
 
 <script>
 import headerItem from '@/components/common/header/HeaderItem.vue'
+
+
 export default {
   name: 'CityHeader',
   components: {
