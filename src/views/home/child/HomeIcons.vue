@@ -1,6 +1,6 @@
 <template>
   <div>
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="list.length > 0">
       <swiper-slide v-for="(items,index) of pages" :key="index">
         <div class="home-icons">
           <div class="icon" v-for="item of items" :key="item.id">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </swiper-slide> -->
-       <div class="swiper-pagination"  slot="pagination"></div>
+
     </swiper>
     
 

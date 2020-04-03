@@ -47,7 +47,8 @@ export default {
       ],
       city:'',
       swiperList:[],
-      iconList:[]
+      iconList:[],
+      weekendList:[]
     }
   },
   methods: {
@@ -67,10 +68,12 @@ export default {
           this.swiperList = res.data.swiperList
           this.iconList = res.data.iconList
           this.recommendItem = res.data.recommendList
+          this.weekendList = res.data.weekendList
         }
       })
       .then(res => {
         this.$bus.$emit('recommend',this.recommendItem)
+        this.$bus.$emit('weenkend',this.weekendList)
       })
      
       
