@@ -10,7 +10,7 @@
           <input type="search" placeholder="输入城市景点主题"> 
         </div>  
       </div>
-      <div slot="header-right">
+      <div slot="header-right" @click="cityClick">
         {{city}}
         <span class="iconfont icon-down">&#xe64a;</span>
         </div>
@@ -26,10 +26,19 @@ export default {
     city:{
       type:String,
       default:''
+    },
+    path:{
+      type:String,
+      default:''
     }
   },
   components: {
     MainHeader
+  },
+  methods: {
+    cityClick(){
+      this.$router.replace(this.path)
+    }
   }
 
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   <header-nav-bar :city="city"></header-nav-bar>
+   <header-nav-bar :city="city" path="/city"></header-nav-bar>
    <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend></home-recommend>
@@ -62,7 +62,6 @@ export default {
       //   console.log(res);
       // })
       getHomeIndex().then(res => {
-        console.log(res);
         if(res.ret && res.data){
           this.city = res.data.city
           this.swiperList = res.data.swiperList
