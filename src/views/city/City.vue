@@ -2,8 +2,8 @@
   <div class="city">
     <Alphabet :cityList="city" class="side-bar"></Alphabet>
     
-    <city-head></city-head>
-    <header-search></header-search>
+    <city-head ></city-head>
+    <header-search :cityList="city"></header-search>
     <scroll class="city-scroll" :probe-type="2" ref="cityScroll" >
       <city-content :cityList="city" ></city-content>
     </scroll>
