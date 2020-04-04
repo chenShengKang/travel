@@ -6,7 +6,11 @@
     <div v-show="keyWord" class="search-content">
       <b-scroll>
         <ul>
-          <li v-for="item of list" :key="item.id">{{item.name}}</li>
+          <li
+           v-for="item of list" 
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+          >{{item.name}}</li>
           <li v-show="hasNoDate"> 暂时无匹配数据</li>
         </ul>
       </b-Scroll>
@@ -29,6 +33,12 @@ export default {
       keyWord:'',
       list:[],
       timer:null
+    }
+  },
+  methods: {
+    handleCityClick(name){
+      this.$store.dispatch('changeCity',name)
+      this.$router.push('/')
     }
   },
   computed: {

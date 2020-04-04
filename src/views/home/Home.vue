@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   <header-nav-bar :city="city" path="/city"></header-nav-bar>
+   <header-nav-bar  path="/city"></header-nav-bar>
    <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend></home-recommend>
@@ -45,7 +45,6 @@ export default {
         // {id:'008',title:'楠溪江',city:'瓯海区',desc:'龙湫山高势绝天，一线瀑走兜罗棉',price:'45',num:654,imgUrl:'http://img1.qunarzz.com/sight/p0/1603/20/20e0961e888e8db790.water.jpg_200x200_d36ad485.jpg'},
         // {id:'010',title:'大龙湫',city:'瓯海区',desc:'这里特别受欢迎哟(๑‾ ꇴ ‾๑)',price:'319',num:654,imgUrl:'http://img1.qunarzz.com/sight/p0/201405/20/2d7f19b34f7a6064e9bb8dc0d531e4b1.jpg_200x200_63f2d336.jpg'},
       ],
-      city:'',
       swiperList:[],
       iconList:[],
       weekendList:[]
@@ -63,7 +62,6 @@ export default {
       // })
       getHomeIndex().then(res => {
         if(res.ret && res.data){
-          this.city = res.data.city
           this.swiperList = res.data.swiperList
           this.iconList = res.data.iconList
           this.recommendItem = res.data.recommendList

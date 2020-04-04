@@ -27,8 +27,9 @@ export default {
     text-align: center;
   }
   .header-right{
-    width: 124/2px;
+    min-width: 104/2px;
     text-align: center;
+    padding: 0 6px;
   }
   .header-center{
     flex: 1;

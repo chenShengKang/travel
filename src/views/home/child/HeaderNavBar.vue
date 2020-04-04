@@ -11,15 +11,17 @@
         </div>  
       </div>
       <div slot="header-right" @click="cityClick">
-        {{city}}
+        {{this.city}}
         <span class="iconfont icon-down">&#xe64a;</span>
-        </div>
+      </div>
     </main-header>
   </div>
 </template>
 
 <script>
 import MainHeader from '@/components/common/header/HeaderItem.vue'
+
+import { mapState } from 'vuex'
 export default {
   name: 'HeaderNavBar',
   props: {
@@ -39,6 +41,9 @@ export default {
     cityClick(){
       this.$router.push(this.path)
     }
+  },
+  computed: {
+      ...mapState(['city'])
   }
 
 }
@@ -67,5 +72,6 @@ export default {
   .icon-down{
     font-size: 12px;
   }
+  
 }
 </style>
