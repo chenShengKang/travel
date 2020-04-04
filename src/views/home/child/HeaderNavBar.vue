@@ -25,10 +25,6 @@ import { mapState } from 'vuex'
 export default {
   name: 'HeaderNavBar',
   props: {
-    city:{
-      type:String,
-      default:''
-    },
     path:{
       type:String,
       default:''

@@ -22,6 +22,8 @@ import HeaderNavBar from './child/HeaderNavBar.vue'
 import HomeIcons from './child/HomeIcons.vue'
 import HomeRecommend from './child/HomeRecommend.vue'
 import HomeWeekend from './child/HomeWeekend.vue'
+
+import { mapState } from 'vuex'
 export default {
   name:'Home',
   components: {
@@ -34,6 +36,7 @@ export default {
   },
   data(){
     return {
+      lastCity:'',
       recommendItem:[
         // {id:'001',title:'云顶草上世界',city:'瓯海区',desc:'这里最近很火哦，好多人都在点评他呢!',price:'172',num:654,imgUrl:'http://img1.qunarzz.com/sight/p0/1809/4d/4d4afebae213d6a5a3.img.jpg_200x200_ad7de07d.jpg'},
         // {id:'002',title:'温州乐园',city:'瓯海区',desc:'让每一个游客亲身融入主题文化中',price:'125',num:654,imgUrl:'http://img1.qunarzz.com/sight/p0/1601/6c/6c40693ccf30a590.water.jpg_200x200_555edf99.jpg'},
@@ -51,7 +54,7 @@ export default {
     }
   },
   methods: {
-    getHomeInfo() {
+    getHomeInfo(city) {
       // axios.get('http://localhost:8080/mock/index.json')
       // .then(res => {
       //   console.log(res);
@@ -60,7 +63,8 @@ export default {
       // .then(res => {
       //   console.log(res);
       // })
-      getHomeIndex().then(res => {
+      getHomeIndex(city).then(res => {
+        console.log(city);
         if(res.ret && res.data){
           this.swiperList = res.data.swiperList
           this.iconList = res.data.iconList
@@ -76,8 +80,23 @@ export default {
       
     }
   },
+  computed:{
+    ...mapState(['city'])
+  },
   created() {
-    this.getHomeInfo()
+    this.getHomeInfo(this.city)
+    this.lastCity = this.city
+    
+  },
+  activated(){
+    console.log('a');
+    console.log(this.lastCity);
+    console.log(this.city);
+    if(this.lastCity !== this.city){
+      this.getHomeInfo(this.city) 
+      this.lastCity = this.city
+      
+    }
   }
 }
 </script>

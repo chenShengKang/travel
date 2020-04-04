@@ -1,8 +1,11 @@
 import {request} from './request.js'
 
-export function getHomeIndex(){
+export function getHomeIndex(city){
   return request({
-    url:'mock/index.json'
+    url:'mock/index.json',
+    params: {
+      city
+    }
   })
 }
 export function getHomeCity(){
