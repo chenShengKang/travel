@@ -13,8 +13,3 @@ export function getHomeCity(){
     url:'mock/city.json'
   })
 }
-export function getHomeDetail(){
-  return request({
-    url:'mock/detail.json'
-  })
-}

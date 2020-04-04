@@ -1,7 +1,7 @@
 <template>
   <div class="recommend-item" >
     <div class="recommend-header">热销推荐</div>
-    <div class="recommend-center" v-for="item of recommendItem" :key="item.id">
+    <div class="recommend-center" v-for="item of recommendItem" :key="item.id" @click="itemClick(item.id)">
       <div class="img">
         <img :src="item.imgUrl" alt="">
       </div>
@@ -36,6 +36,11 @@ export default {
       default() {
         return [];
       }
+    }
+  },
+  methods: {
+    itemClick(id){
+      this.$emit('recommendChange',id)
     }
   },
   filters:{

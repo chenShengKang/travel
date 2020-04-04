@@ -89,9 +89,6 @@ export default {
     
   },
   activated(){
-    console.log('a');
-    console.log(this.lastCity);
-    console.log(this.city);
     if(this.lastCity !== this.city){
       this.getHomeInfo(this.city) 
       this.lastCity = this.city

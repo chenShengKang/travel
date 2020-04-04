@@ -1,6 +1,6 @@
 <template>
   <div class="home-recommend">
-    <home-recommend-item :recommend-item='recommendItem'>
+    <home-recommend-item :recommend-item='recommendItem' @recommendChange="recommendChange">
 
     </home-recommend-item>
   </div>
@@ -15,6 +15,11 @@ export default {
       recommendItem:[
         
       ]
+    }
+  },
+  methods: {
+    recommendChange(id){
+      this.$router.push('/detail/'+ id)
     }
   },
   components: {
